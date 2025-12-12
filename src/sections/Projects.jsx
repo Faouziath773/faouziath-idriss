@@ -54,9 +54,41 @@ function Projects() {
                     </span>
                   ))}
                 </div>
-                <div className="flex flex-wrap items-center gap-2 rounded-2xl bg-slate-100/70 px-3 py-2 text-xs font-semibold uppercase tracking-wide text-slate-500 ring-1 ring-slate-200 dark:bg-white/5 dark:text-slate-300 dark:ring-white/10">
-                  Liens démo/code bientôt ajoutés
-                </div>
+                {(project.demo && !project.demo.includes('example.com')) ||
+                (project.github && !project.github.includes('example.com')) ? (
+                  <div className="flex flex-wrap gap-3">
+                    {project.demo && !project.demo.includes('example.com') && (
+                      <Button
+                        as="a"
+                        href={project.demo}
+                        target="_blank"
+                        rel="noreferrer"
+                        variant="primary"
+                        className="text-sm"
+                      >
+                        <ExternalLink size={16} />
+                        Démo
+                      </Button>
+                    )}
+                    {project.github && !project.github.includes('example.com') && (
+                      <Button
+                        as="a"
+                        href={project.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        variant="subtle"
+                        className="text-sm"
+                      >
+                        <Github size={16} />
+                        Code
+                      </Button>
+                    )}
+                  </div>
+                ) : (
+                  <div className="flex flex-wrap items-center gap-2 rounded-2xl bg-slate-100/70 px-3 py-2 text-xs font-semibold uppercase tracking-wide text-slate-500 ring-1 ring-slate-200 dark:bg-white/5 dark:text-slate-300 dark:ring-white/10">
+                    Liens démo/code bientôt ajoutés
+                  </div>
+                )}
               </div>
             </motion.article>
           ))}
