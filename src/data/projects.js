@@ -26,7 +26,7 @@ export const projects = [
     stack: ['React', 'Framer Motion', 'Express', 'PostgreSQL'],
     image:
       'https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=80',
-    demo: 'https://novabank-orpin.vercel.app/dashboard', // Remplace par ton URL Vercel réelle
+    demo: 'https://novabank-orpin.vercel.app', // Remplace par ton URL Vercel réelle
     github: 'https://github.com/Faouziath773/novabank.git', // Ajoute ton lien GitHub si tu veux le partager
   },
   {
